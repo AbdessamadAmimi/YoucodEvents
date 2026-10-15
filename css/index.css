@@ -164,12 +164,7 @@ main content
     padding: 2rem 0;
 }
 
-/* flexbox */
 
-/* .heroSection .part .actions {
-    display: flex;
-    flex-wrap: wrap;
-} */
 .heroSection {
     display: flex;
     justify-content: space-between;
@@ -278,7 +273,7 @@ main content
     padding: 0 16px;
 }
 
-/* flexbox */
+
 
 .evenement .conteneur .enTete {
     display: flex;
@@ -381,7 +376,7 @@ main content
     align-items: center;
 }
 
-/* flexbox */
+
 
 .chiffres .conteneur {
     display: grid;
@@ -726,6 +721,10 @@ main content
         border-radius: 10px;
         width: 30vw;
     }
+    .evenement .conteneur .cartes {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
 
     .heroSection .imageHero img {
         width: 40vw;
@@ -752,10 +751,7 @@ main content
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .evenement .conteneur .cartes {
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
-    }
+
 
     .footer .container {
         display: flex;
