@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <h1>YouCode <span>Events</span></h1>
+            <span class="list"><img src="assets/icons/list_icon.svg" alt=""></span>
+        </div>
+        <nav class="nav-bar hide-list">
+            <a class="page-link current-page" href="">Acceuil</a>
+            <a class="page-link" href="">Evénement</a>
+            <a class="page-link" href="">Intervenants</a>
+            <a class="button" href="">S'inscrire</a>
+        </nav>
+    </header>
+
+    <main></main>
+
+    <footer class="footer">
+        <section class="container">
+            <div class="top">
+                <h3>YouCode Events</h3>
+                <p>
+                    Les ateliers, conférences, hackathons et rencontres de Youcode, réunis au meme endroit.
+                </p>
+            </div>
+
+            <div class="navigation">
+                <h4>Navigation</h4>
+                <ul>
+                    <li>Acceuil</li>
+                    <li>Evénement</li>
+                    <li>Intervenants et partenaires</li>
+                    <li>Inscription</li>
+                </ul>
+            </div>
+
+            <div class="contact">
+                <h4>Contact</h4>
+                <p class="email">contact@youcode-events.example</p>
+                <p>Youssoufia - Safi - Nador</p>
+            </div>
+
+            <hr>
+
+            <div class="rights">c 2026 YouCode Events - site fictif réalisé en formation</div>
+        </section>
+    </footer>
+</body>
+
+</html>
+<script>
+    let list_icon = document.querySelector(".list");
+    let nav_bar = document.querySelector(".nav-bar");
+    list_icon.addEventListener(("click"), () => {
+        if (nav_bar.classList.contains("hide-list")) {
+            nav_bar.classList.remove("hide-list");
+            document.querySelector(".main").classList.add("display-none");
+            document.querySelector(".footer").classList.add("display-none");
+        }
+        else {
+            nav_bar.classList.add("hide-list");
+            document.querySelector(".main").classList.remove("display-none");
+            document.querySelector(".footer").classList.remove("display-none");
+        }
+    })
+    // if(window.innerWidth > 950) nav_bar.classList.remove("hide-list");
+</script>
