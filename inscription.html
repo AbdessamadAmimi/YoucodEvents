@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/inscription.css">
 </head>
 
 <body>
@@ -14,14 +16,108 @@
             <span class="list"><img src="assets/icons/list_icon.svg" alt=""></span>
         </div>
         <nav class="nav-bar hide-list">
-            <a class="page-link current-page" href="">Acceuil</a>
-            <a class="page-link" href="">Evénement</a>
-            <a class="page-link" href="">Intervenants</a>
-            <a class="button" href="">S'inscrire</a>
+            <a class="page-link" href="index.html">Acceuil</a>
+            <a class="page-link" href="evenements.html">Evénement</a>
+            <a class="page-link" href="intervenants.html">Intervenants</a>
+            <a class="button" href="inscription.html">S'inscrire</a>
         </nav>
     </header>
+    <div class="top-section">
+        <h1>Inscription</h1>
+        <p>Réservez votre place à un atelier, une conférence, un hackathon ou une rencontre. L'inscription est gratuite.
+        </p>
+    </div>
+    <main class="main">
+        <div class="main-form">
+            <h1>Vos information</h1>
+            <p>Les champs marqués * sont obliguatoires.</p>
+            <p class="good result">Inscription Valide et envoyer avec succes</p>
+            <p class="bad result">Inscription non valide verifier les champs</p>
+            <form action="">
+                <div class="nom">
+                    <label for="">Nom *</label> <br>
+                    <input onchange="ValidInput(this)" type="text" id="input_nom" placeholder="Votre nom" class="input">
+                    <p class="success validation hide_p">
+                        Champ valide
+                    </p>
+                    <p class="error validation hide_p">
+                        Champ invalide
+                    </p>
+                </div>
 
-    <main></main>
+                <div class="prenom">
+                    <label for="">Prenom *</label> <br>
+                    <input type="text" id="input_prenom" placeholder="Votre prenom">
+                    <p class="success validation hide_p">
+                        Champ valide
+                    </p>
+                    <p class="error validation hide_p">
+                        Champ invalide
+                    </p>
+                </div>
+
+                <div class="email">
+                    <label for="">Adresse e-mail *</label> <br>
+                    <input type="email" id="input_email" placeholder="Votre adresse e-mail">
+                    <p class="success validation hide_p">
+                        Champ valide
+                    </p>
+                    <p class="error validation hide_p">
+                        Erreur: Saisir une adresse valid, par exemple nom@domaine.com
+                    </p>
+                </div>
+
+                <div class="telephone">
+                    <label for="">Téléphone</label> <br>
+                    <input type="tel" id="input_tele" placeholder="06 00 00 00 00">
+                    <p class="success validation hide_p">
+                        Champ valide
+                    </p>
+                    <p class="error validation hide_p">
+                        Erreur: Saisir un numero de téléphone valid, par exemple: 0610203040
+                    </p>
+                </div>
+
+                <div class="event">
+                    <label for="">Evénement choisi *</label> <br>
+                    <select name="" id="" placeholder="Choisir un événement">
+                        <option value="Atelier">Atelier</option>
+                        <option value="Conférence">Conférence</option>
+                        <option value="Hackathon">Hackathon</option>
+                        <option value="Rencontre">Rencontre</option>
+                    </select>
+                </div>
+
+                <div class="niveau-section">
+                    <label for="">Niveau *</label>
+                    <div class="niveau">
+                        <div>
+                            <input value="Débutant" name="niveau" type="radio"> <label for="">Débutant</label>
+                        </div>
+                        <div>
+                            <input value="Intermédiaire" name="niveau" type="radio"> <label for="">Intermédiaire</label>
+                        </div>
+                        <div>
+                            <input value="Avancé" name="niveau" type="radio"> <label for="">Avancé</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <label for="">Message (facultatif)</label> <br>
+                    <textarea name="" id="" placeholder="Vos attentes, vos questions"></textarea>
+                </div>
+
+                <div class="confirmer">
+                    <input type="checkbox" id="checkbox">
+                    <label for="">J'accepte que mes données servent à gérer mon inscription *</label>
+                </div>
+                <div class="button">
+                    <button disabled id="btn" class="disabled">Valider mon inscription</button>
+                </div>
+            </form>
+        </div>
+    </main>
 
     <footer class="footer">
         <section class="container">
@@ -71,5 +167,98 @@
             document.querySelector(".footer").classList.remove("display-none");
         }
     })
-    // if(window.innerWidth > 950) nav_bar.classList.remove("hide-list");
+
+
+
+    const symbols = [
+        "~", "&", "é", "-", "(", "'", "è", "ç",
+        '"', "à", ")", "=", "+", "*", "/", "\\",
+        "@", "#", "$", "%", "^", "_", ".", ",",
+        ";", ":", "!", "?", "[", "]", "{", "}",
+        "<", ">", "|", "`", " ", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+    ];
+    const numbers = [
+        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+    ]
+
+    function Success(input) {
+        input.parentElement.querySelector(".success").classList.remove("hide_p");
+
+        input.parentElement.querySelector(".error").classList.add("hide_p");
+
+        input.classList.add("border_green");
+
+        input.classList.remove("border_red");
+    }
+
+    function Errore(input) {
+        input.parentElement.querySelector(".success").classList.add("hide_p");
+
+        input.parentElement.querySelector(".error").classList.remove("hide_p");
+
+        input.classList.remove("border_green");
+
+        input.classList.add("border_red");
+    }
+
+    let input_nom = document.querySelector("#input_nom");
+    let input_prenom = document.querySelector("#input_prenom");
+    let input_email = document.querySelector("#input_email");
+    let input_tele = document.querySelector("#input_tele");
+    function ValidInput(input) {
+        if (!(symbols.some((r) => input.value.includes(r))) && input.value.length > 2) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    input_nom.addEventListener(("input"), () => {
+        if (ValidInput(input_nom)) Success(input_nom)
+        else Errore(input_nom)
+    })
+    input_prenom.addEventListener(("input"), () => {
+        if (ValidInput(input_prenom)) Success(input_prenom)
+        else Errore(input_prenom)
+    })
+
+
+    function valid_phone(input) {
+        if (input.value[0] == 0 && numbers.some((n) => n.includes(n)) && input.value.length === 10) return true;
+        else return false
+    }
+
+    input_tele.addEventListener("input", () => {
+        if (valid_phone(input_tele)) Success(input_tele)
+        else Errore(input_tele);
+    })
+
+    function validEmail(email) {
+        let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regexEmail.test(email);
+    }
+
+    input_email.addEventListener(("input"), () => {
+        if (validEmail(input_email.value)) Success(input_email)
+        else Errore(input_email);
+    })
+
+    let niveau = document.querySelector('input[name = "niveau"]:checked');
+
+    let checkbox = document.querySelector("#checkbox");
+    let button = document.querySelector("#btn");
+    let is_checked = false;
+    checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+            button.disabled = false;
+            button.classList.remove("disabled");
+            is_checked = true;
+        } else {
+            button.disabled = true;
+            button.classList.add("disabled");
+            is_checked = false
+        }
+    });
+
+
 </script>
