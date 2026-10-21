@@ -1,0 +1,248 @@
+.pageTitre{
+    background-color: #FFEDD5;
+    width: 100%;
+}
+.pageTitre .part {
+    padding: 20px ;
+}
+.pageTitre .part .enTete .atelier{
+    background-color: #FFEDD5;
+    color: #9A3412;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    width:80px;
+    text-align: center;
+}
+.pageTitrea .part .text{
+    width: 100%;
+}
+.pageTitre .part .actions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+.pageTitre .part .actions .rejoin{
+    background-color: #C2410C;
+    border:1px solid #C2410C;
+    border-radius: 7px;
+    width: 95%;
+    height: 48px;
+    text-align: center;
+    
+}
+.pageTitre .part .actions .inscri{
+    background-color: #ffff;
+    border:2px solid #C2410C;
+    border-radius: 7px;
+    width: 95%;
+    height: 48px;
+    text-align: center;
+}
+.pageTitre .part .actions .rejoin .rejoindre{
+    text-decoration: none;
+    color: #ffff;
+}
+.pageTitre .part .actions .inscri .inscrire{
+    text-decoration: none;
+    color: #C2410C;
+}
+.pageTitre .image {
+    width: 100%;
+
+}
+.pageTitre .image img{
+    width: 100%;
+}
+
+
+.détails{
+    background-color: #C2410C;
+    width: 100%;
+}
+.détails .det {
+    display: grid;
+    grid-template-columns: repeat(1fr,90%);
+    gap: 10px;
+}
+.détails .det .card{
+    border: 1px solid #000000;
+    border-radius: 7px;
+    margin: 8px;
+    text-align: center;
+    width: 95%;
+    height: 90px;
+}
+.détails .det .card .info {
+    color: #ffff;
+    padding: 15px 0px;
+}
+.cartes {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 10px;
+}
+.cartes .carte{
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+}
+.cartes .carte .image img {
+    width: 100%;
+    height: auto;
+}
+.apprendre {
+    width: 100%;
+    background-color: #FFEDD5;
+    margin-top: 10px;
+}
+.apprendre .part{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+}
+
+.autrEvenement {
+  width: 99%;
+ display: flex;
+ justify-content: space-between;
+ flex-direction: column;
+  gap: 10px;
+}
+.autrEvenement .contenu{
+    border: 1px solid #000000;
+    border-radius: 7px;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    
+}
+.autrEvenement .contenu .atelier{
+    background-color: #FFEDD5;
+    color: #9A3412;
+    border-radius: 10px;
+    width: max-content;
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 12px;
+}
+
+.autrEvenement .contenu h3{
+    margin-bottom: 10px;
+}
+.evenement .contenu .info{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 15px;
+
+}
+.autrEvenement .contenu .info .time{
+    color: #57534E;
+    font-weight: 10;
+    
+}
+
+.autrEvenement .contenu .info .localisation .local{
+    color: #57534E;
+    font-weight: 10;
+    
+}
+.autrEvenement .contenu .info .détail {
+    margin-bottom: 20px;
+}
+.autrEvenement .contenu .info .détail .det{
+    color: #C2410C;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+
+@media (min-width :768px) {
+.pageTitre .part .enTete{
+    padding: 0px 20px;
+}
+.pageTitre .part .actions{
+    flex-direction: row;
+    padding: 25px;
+}
+.pageTitre .part .actions .rejoin{
+    width: 204px;
+    height: 48px;
+}
+.pageTitre .part .actions .inscri{
+    width: 120px;
+    height: 48px;
+}  
+.détails .det{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    
+}
+.détails .det .card{
+    width: 95%;
+}
+.cartes{
+    width: 100%;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2 ,48%);
+}
+.autrEvenement {
+    width: 100%;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.autrEvenement .contenu{
+    width: 90%;
+}
+}
+
+@media (min-width: 1024px){
+    .pageTitre {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+}
+.pageTitre .part{
+    width: 45%;
+}
+.détails .det{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.détails .det .card{
+    width: 95%;
+}
+.autrEvenement {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.autrEvenement .contenu{
+    width: 90%;
+}
+.cartes .carte {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 5px;
+    width: 97%;
+    padding: 10px;
+}
+.cartes .carte.image img{
+    width: 40%;
+}
+.cartes .carte .part{
+    width: 50%;
+}
+}
